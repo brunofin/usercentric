@@ -1,0 +1,12 @@
+<md-card class="info-card">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Following</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+    <p ng-repeat="relatedUser in following">
+      {{ relatedUser.login }}
+    </p>
+  </md-card-content>
+</md-card>

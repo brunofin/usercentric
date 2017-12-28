@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="xyz.brunofinger.usercentric">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <base href="./">
+
+    <link rel="stylesheet" media="all" href="bundle.css">
+    <script type="application/javascript" src="bundle.js"></script>
+
+    <title></title>
+
+  </head>
+
+  <body layout="column" layout-align="start stretch">
+    <md-toolbar class="md-whiteframe-z1" md-scroll-shrink>
+      <div class="md-toolbar-tools">
+        <h3 layout="row" layout-align="start center">
+          <span>Usercentric GitHub</span>
+          <md-input-container>
+            <label>Search for user or organization</label>
+            <input type="text" />
+          </md-input-container>
+        </h3>
+      </div>
+    </md-toolbar>
+
+    <md-content flex
+      ng-view
+      layout="column"
+      layout-align="start center"
+      md-colors="{ 'background': 'accent-hue-3-0.1'}">
+    </md-content>
+  </body>
+
+</html>

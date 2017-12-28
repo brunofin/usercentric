@@ -1,0 +1,73 @@
+{
+  "version": "0.1.0",
+  "name": "usercentric",
+  "description": "A user-centric GitHub interface",
+  "repository": "",
+
+  "dependencies": {
+    "jquery": "3.2.1",
+    "angular": "1.5.0",
+    "angular-animate": "1.5.0",
+    "angular-aria": "1.5.0",
+    "angular-route": "1.5.0",
+    "angular-messages": "1.5.0",
+    "angular-translate": "2.17.0",
+    "angular-translate-loader-static-files": "2.17.0",
+    "angular-material": "1.1.5",
+    "angular-material-data-table": "0.10.10",
+    "angular-leaflet-directive": "0.10.0",
+    "moment": "2.20.1"
+  },
+
+  "devDependencies": {
+    "http-server": "0.10.0",
+    "concurrently": "3.5.1",
+    "del": "3.0.0",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "gulp": "3.9.1",
+    "gulp-babel": "7.0.0",
+    "gulp-util": "3.0.8",
+    "gulp-sass": "3.1.0",
+    "gulp-sourcemaps": "2.6.2",
+    "gulp-rename": "1.2.2",
+    "gulp-concat": "2.6.1"
+  },
+
+  "scripts": {
+    "prestart": "yarn install",
+    "start": "concurrently \"yarn run server:static\" \"gulp\"",
+
+    "server:static": "http-server ./src -a 0.0.0.0 -p 8080",
+
+    "predeploy": "yarn install",
+    "deploy": "gulp deploy"
+  },
+
+  "assets": {
+    "JS": [
+      "jquery/dist/jquery.js",
+      "angular/angular.js",
+      "angular-animate/angular-animate.js",
+      "angular-aria/angular-aria.js",
+      "angular-messages/angular-messages.js",
+      "angular-route/angular-route.js",
+      "angular-translate/dist/angular-translate.js",
+      "angular-translate-loader-static-files/angular-translate-loader-static-files.js",
+      "leaflet/dist/leaflet.js",
+      "angular-leaflet-directive/dist/angular-leaflet-directive.js",
+      "angular-material/angular-material.js",
+      "angular-material-data-table/dist/md-data-table.js",
+      "moment/moment.js"
+    ],
+
+    "SCSS": [
+      "angular-material/angular-material.scss"
+    ],
+
+    "CSS": [
+      "leaflet/dist/leaflet.css",
+      "angular-material-data-table/dist/md-data-table.css"
+    ]
+  }
+}

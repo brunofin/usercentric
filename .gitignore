@@ -1,0 +1,10 @@
+.sass-cache
+node_modules
+npm-debug.log
+yarn-error.log
+*.map
+src/bundle.css
+src/bundle.js
+dist/*
+node-log.txt
+Thumbs.db
