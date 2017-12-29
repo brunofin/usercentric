@@ -1,0 +1,32 @@
+<md-card class="info-card">
+  <md-nav-bar md-selected-nav-item="peopleCtrl.currentNav">
+     <md-nav-item md-nav-click="peopleCtrl.navTo('following')" name="following">
+       Following
+     </md-nav-item>
+     <md-nav-item md-nav-click="peopleCtrl.navTo('followers')" name="followers">
+       Followers
+     </md-nav-item>
+   </md-nav-bar>
+
+  <md-card-content>
+
+    <md-list ng-show="peopleCtrl.isShowingFollowing()">
+      <md-list-item class="md-2-line contact-item" ng-repeat="contact in following">
+        <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
+        <div class="md-list-item-text compact">
+          <h3><a ng-href="{{ '/#/User/' + contact.login }}">{{ contact.login }}</a></h3>
+        </div>
+      </md-list-item>
+    </md-list>
+
+    <md-list ng-show="peopleCtrl.isShowingFollowers()">
+      <md-list-item class="md-2-line contact-item" ng-repeat="contact in followers">
+        <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
+        <div class="md-list-item-text compact">
+          <h3><a ng-href="{{ '/#/User/' + contact.login }}">{{ contact.login }}</a></h3>
+        </div>
+      </md-list-item>
+    </md-list>
+
+  </md-card-content>
+</md-card>
