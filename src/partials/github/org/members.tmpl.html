@@ -1,0 +1,31 @@
+<md-card>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Public members</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+
+    <section class="contained-list">
+      <md-subheader class="md-no-sticky">{{ members.length }} members</md-subheader>
+      <md-list>
+        <md-list-item class="contact-item" ng-repeat="contact in members | orderBy:'+login'">
+          <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
+          <div class="md-list-item-text compact">
+            <p><a ng-href="{{ '/#/User/' + contact.login }}">{{ contact.login }}</a></p>
+            <p>
+              {{ memberDetails.get(contact.login).followers }} followers
+            </p>
+          </div>
+        </md-list-item>
+        <md-list-item class="contact-item" ng-hide="members.length">
+          <div class="md-list-item-text compact">
+            <span>This list is empty</span>
+          </div>
+        </md-list-item>
+      </md-list>
+      </md-list>
+    </section>
+
+  </md-card-content>
+</md-card>

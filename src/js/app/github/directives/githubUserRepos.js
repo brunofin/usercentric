@@ -25,16 +25,16 @@
             starred: true
           };
 
-          GitHubDAO.getRepos($scope.user.login).then(({ data }) => {
+          GitHubDAO.user.getRepos($scope.user.login).then(({ data }) => {
             $scope.repos = data.filter(repo => !repo.fork);
             $scope.forked = data.filter(repo => repo.fork);
           });
 
-          GitHubDAO.getStarredRepos($scope.user.login).then(({ data }) => {
+          GitHubDAO.user.getStarredRepos($scope.user.login).then(({ data }) => {
             $scope.starred = data;
           });
 
-          GitHubDAO.getGists($scope.user.login).then(({ data }) => {
+          GitHubDAO.user.getGists($scope.user.login).then(({ data }) => {
             $scope.gists = data;
           });
         }

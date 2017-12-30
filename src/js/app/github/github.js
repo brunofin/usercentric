@@ -3,11 +3,27 @@
     'xyz.brunofinger.usercentric.openstreetmap',
   ]);
 
+  app.run(['$cacheFactory', $cacheFactory => {
+    $cacheFactory('userCache');
+  }]);
+
   app.config(['$routeProvider', ($routeProvider) => {
     const userResolve = ($route, $q, GitHubDAO) => {
       const deferred = $q.defer();
 
-      GitHubDAO.getUser($route.current.params.user).then(({ data }) => {
+      GitHubDAO.user.getUser($route.current.params.user).then(({ data }) => {
+        deferred.resolve(data);
+      }, ({ status }) => {
+        deferred.reject({ status });
+      });
+
+      return deferred.promise;
+    };
+
+    const orgResolve = ($route, $q, GitHubDAO) => {
+      const deferred = $q.defer();
+
+      GitHubDAO.orgs.getOrganization($route.current.params.org).then(({ data }) => {
         deferred.resolve(data);
       }, ({ status }) => {
         deferred.reject({ status });
@@ -20,9 +36,18 @@
      .when('/User/:user', {
        templateUrl: '/partials/github/user.tmpl.html',
        reloadOnSearch: false,
-       controller: 'GitHubUserController',
        resolve: {
          user: userResolve
+       }
+     })
+     .when('/Organization/:org', {
+       templateUrl: '/partials/github/organization.tmpl.html',
+       reloadOnSearch: false,
+       controller($scope) {
+         console.log($scope);
+       },
+       resolve: {
+         org: orgResolve
        }
      })
   }]);

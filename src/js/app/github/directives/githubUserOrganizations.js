@@ -8,7 +8,7 @@
           user: '='
         },
         controller($scope) {
-          GitHubDAO.getOrganizations($scope.user.login).then(({ data }) => {
+          GitHubDAO.user.getOrganizations($scope.user.login).then(({ data }) => {
             $scope.orgs = data;
           });
         }

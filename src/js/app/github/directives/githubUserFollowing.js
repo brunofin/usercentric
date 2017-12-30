@@ -20,11 +20,11 @@
           this.isShowingFollowing = () => this.currentNav === 'following';
           this.isShowingFollowers = () => this.currentNav === 'followers';
 
-          GitHubDAO.getFollowing($scope.user.login).then(({ data }) => {
+          GitHubDAO.user.getFollowing($scope.user.login).then(({ data }) => {
             $scope.following = data;
           });
 
-          GitHubDAO.getFollowers($scope.user.login).then(({ data }) => {
+          GitHubDAO.user.getFollowers($scope.user.login).then(({ data }) => {
             $scope.followers = data;
           });
         }

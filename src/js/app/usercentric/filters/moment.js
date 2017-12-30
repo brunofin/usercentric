@@ -1,11 +1,5 @@
 (angular => {
-  const app = angular.module('xyz.brunofinger.usercentric.github');
-
-  app.controller('GitHubUserController', ['$scope',
-      function($scope) {
-    console.log($scope);
-
-  }]);
+  const app = angular.module('xyz.brunofinger.usercentric');
 
   app.filter('moment', () => {
     return (input, format="DD/MM/YYYY HH:mm:ss") => {

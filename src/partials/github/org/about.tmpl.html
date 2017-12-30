@@ -1,0 +1,48 @@
+<md-card class="org-about-card">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">{{ org.name }}</span>
+      <span class="md-subhead">{{ org.login }}</span>
+
+      <a ng-if="org.blog" ng-href="{{ org.blog }}" target="_blank">{{ org.blog }}</a>
+      <a ng-if="org.email" ng-href="{{ 'mailto:' + org.blog }}" target="_blank">{{ org.email }}</a>
+      <p ng-if="org.description" ng-bind="org.description"></p>
+    </md-card-title-text>
+    <md-card-title-media>
+      <div class="md-media-lg card-media">
+        <img ng-src="{{ org.avatar_url }}" />
+      </div>
+    </md-card-title-media>
+  </md-card-title>
+  <md-card-content layout="row" layout-align="space-between center">
+
+    <div>
+      <md-icon md-svg-src="/assets/icons/created_at.svg">
+        <md-tooltip>Created at</md-tooltip>
+      </md-icon>
+      <span>{{ org.created_at | moment:"DD/MM/YYYY" }}</span>
+    </div>
+
+    <div>
+      <md-icon md-svg-src="/assets/icons/autorenew.svg">
+        <md-tooltip>Last updated at</md-tooltip>
+      </md-icon>
+      <span>{{ org.updated_at | moment }}</span>
+    </div>
+
+    <div>
+      <md-icon md-svg-src="/assets/icons/autorenew.svg">
+        <md-tooltip>Public repositories</md-tooltip>
+      </md-icon>
+      <span>{{ org.public_repos }}</span>
+    </div>
+
+    <div ng-if="org.location">
+      <md-icon md-svg-src="/assets/icons/autorenew.svg">
+        <md-tooltip>Location</md-tooltip>
+      </md-icon>
+      <span>{{ org.location }}</span>
+    </div>
+
+  </md-card-content>
+</md-card>

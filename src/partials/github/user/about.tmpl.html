@@ -5,8 +5,10 @@
       <span class="md-subhead">{{ user.login }}</span>
 
       <a ng-if="user.blog" ng-href="{{ user.blog }}" target="_blank">{{ user.blog }}</a>
-      <a ng-if="user.email" ng-href="{{ 'mailto:' + user.blog }}" target="_blank">{{ user.email }}</a>
-      <span ng-if="user.company"><a ng-href="{{ '/#/Organization/' + user.company }}">{{ user.company }}</a></span>
+      <a ng-if="user.email" ng-href="{{ 'mailto:' + user.email }}" target="_blank">{{ user.email }}</a>
+      <span ng-if="user.company">
+        <a ng-href="{{ '/#/Organization/' + ctrl.trimAt(user.company) }}">{{ user.company }}</a>
+      </span>
       <p ng-if="user.bio" ng-bind="user.bio"></p>
       <p ng-if="user.hireable">
         <strong>For hire</strong>
