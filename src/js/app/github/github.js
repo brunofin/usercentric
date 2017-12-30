@@ -25,46 +25,6 @@
          user: userResolve
        }
      })
-     .when('/User/:user/followers', {
-       templateUrl: '/partials/github/followers.tmpl.html',
-       reloadOnSearch: false,
-       controller: 'GitHubUserController',
-       resolve: {
-         user: userResolve
-       }
-     })
-     .when('/User/:user/following', {
-       templateUrl: '/partials/github/following.tmpl.html',
-       reloadOnSearch: false,
-       controller: 'GitHubUserController',
-       resolve: {
-         user: userResolve
-       }
-     })
-     .when('/User/:user/gists', {
-       templateUrl: '/partials/github/gists.tmpl.html',
-       reloadOnSearch: false,
-       controller: 'GitHubUserController',
-       resolve: {
-         user: userResolve
-       }
-     })
-     .when('/User/:user/organizations', {
-       templateUrl: '/partials/github/gists.tmpl.html',
-       reloadOnSearch: false,
-       controller: 'GitHubUserController',
-       resolve: {
-         user: userResolve
-       }
-     })
-     .when('/User/:user/repositories', {
-       templateUrl: '/partials/github/gists.tmpl.html',
-       reloadOnSearch: false,
-       controller: 'GitHubUserController',
-       resolve: {
-         user: userResolve
-       }
-     })
   }]);
 
 })(window.angular);

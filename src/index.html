@@ -16,8 +16,8 @@
 
   </head>
 
-  <body layout="column" layout-align="start stretch">
-    <md-toolbar class="md-whiteframe-z1" md-scroll-shrink>
+  <body layout="column">
+    <md-toolbar layout="row" class="md-whiteframe-z1">
       <div class="md-toolbar-tools">
         <h3 layout="row" layout-align="start center">
           <span>Usercentric GitHub</span>
@@ -29,12 +29,12 @@
       </div>
     </md-toolbar>
 
-    <md-content flex
+    <md-content
       ng-view
       layout="column"
-      layout-align="start center"
-      md-colors="{ 'background': 'accent-hue-3-0.1'}">
-    </md-content>
-  </body>
+      layout-align="start stretch"
+      layout-padding
+      md-colors="{ 'background': 'accent-hue-3-0.1'}"></md-content>
 
+  </body>
 </html>

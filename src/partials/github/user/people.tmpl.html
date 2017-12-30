@@ -10,23 +10,41 @@
 
   <md-card-content>
 
-    <md-list ng-show="peopleCtrl.isShowingFollowing()">
-      <md-list-item class="md-2-line contact-item" ng-repeat="contact in following">
-        <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
-        <div class="md-list-item-text compact">
-          <h3><a ng-href="{{ '/#/User/' + contact.login }}">{{ contact.login }}</a></h3>
-        </div>
-      </md-list-item>
-    </md-list>
+    <section class="contained-list" ng-show="peopleCtrl.isShowingFollowing()">
+      <md-subheader class="md-no-sticky">{{ following.length }} following</md-subheader>
+      <md-list>
+        <md-list-item class="contact-item" ng-repeat="contact in following | orderBy:'+login'">
+          <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
+          <div class="md-list-item-text compact">
+            <p><a ng-href="{{ '/#/User/' + contact.login }}">{{ contact.login }}</a></p>
+          </div>
+        </md-list-item>
+        <md-list-item class="contact-item" ng-hide="following.length">
+          <div class="md-list-item-text compact">
+            <span>This list is empty</span>
+          </div>
+        </md-list-item>
+      </md-list>
+      </md-list>
+    </section>
 
-    <md-list ng-show="peopleCtrl.isShowingFollowers()">
-      <md-list-item class="md-2-line contact-item" ng-repeat="contact in followers">
-        <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
-        <div class="md-list-item-text compact">
-          <h3><a ng-href="{{ '/#/User/' + contact.login }}">{{ contact.login }}</a></h3>
-        </div>
-      </md-list-item>
-    </md-list>
+    <section class="contained-list" ng-show="peopleCtrl.isShowingFollowers()">
+      <md-subheader class="md-no-sticky">{{ followers.length }} followers</md-subheader>
+      <md-list>
+        <md-list-item class="contact-item" ng-repeat="contact in followers | orderBy:'+login'">
+          <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
+          <div class="md-list-item-text compact">
+            <p><a ng-href="{{ '/#/User/' + contact.login }}">{{ contact.login }}</a></p>
+          </div>
+        </md-list-item>
+        <md-list-item class="contact-item" ng-hide="followers.length">
+          <div class="md-list-item-text compact">
+            <span>This list is empty</span>
+          </div>
+        </md-list-item>
+      </md-list>
+      </md-list>
+    </section>
 
   </md-card-content>
 </md-card>

@@ -1,12 +1,20 @@
-<md-card class="info-card">
+<md-card class="info-card" ng-if="orgs.length">
   <md-card-title>
     <md-card-title-text>
       <span class="md-headline">Organizations</span>
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
-    <p>
-      a
-    </p>
+    <section class="contained-list">
+      <md-subheader class="md-no-sticky">{{ orgs.length }} organizations</md-subheader>
+      <md-list>
+        <md-list-item class="contact-item" ng-repeat="contact in orgs | orderBy:'+login'">
+          <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
+          <div class="md-list-item-text compact">
+            <p><a ng-href="{{ '/#/Organization/' + contact.login }}">{{ contact.login }}</a></p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
   </md-card-content>
 </md-card>
