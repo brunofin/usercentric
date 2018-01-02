@@ -21,7 +21,8 @@
               method: 'GET',
               url: `${ apiBase }/users/${ username }`,
               params
-            }).then(response => {
+            })
+            .then(response => {
               userCache.put(username, response.data);
               deferred.resolve(response);
             }, response => {
@@ -86,13 +87,22 @@
             params
           });
         },
-        getPublicMembers(org) {
+        getPublicRepositories(org) {
           return $http({
             method: 'GET',
-            url: `${ apiBase }/orgs/${ org }/members`,
+            url: `${ apiBase }/orgs/${ org }/repos`,
             params
           });
-        }
+        },
+      },
+      repos: {
+        getRepoContributors(repository) {
+          return $http({
+            method: 'GET',
+            url: `${ apiBase }/repos/${ repository }/contributors`,
+            params
+          });
+        },
       }
     };
   }]);

@@ -1,31 +1,48 @@
 <md-card>
   <md-card-title>
     <md-card-title-text>
-      <span class="md-headline">Public members</span>
+      <span class="md-headline">Contributors</span>
+      <span class="md-subheader">List of contributors to all public repositories owned by this organization</span>
     </md-card-title-text>
   </md-card-title>
-  <md-card-content>
+  <md-card-content layout="column">
 
-    <section class="contained-list">
-      <md-subheader class="md-no-sticky">{{ members.length }} members</md-subheader>
-      <md-list>
-        <md-list-item class="contact-item" ng-repeat="contact in members | orderBy:'+login'">
-          <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
-          <div class="md-list-item-text compact">
-            <p><a ng-href="{{ '/#/User/' + contact.login }}">{{ contact.login }}</a></p>
-            <p>
-              {{ memberDetails.get(contact.login).followers }} followers
-            </p>
-          </div>
-        </md-list-item>
-        <md-list-item class="contact-item" ng-hide="members.length">
-          <div class="md-list-item-text compact">
-            <span>This list is empty</span>
-          </div>
-        </md-list-item>
-      </md-list>
-      </md-list>
-    </section>
+  <md-input-container flex>
+    <label>Search</label>
+    <input ng-model="filter" ng-change="filterChanged()" type="text" />
+  </md-input-container>
+
+<md-table-container>
+  <table md-table>
+    <thead md-head md-order="query.order">
+      <tr md-row>
+        <th md-column md-order-by="login"><span>Username</span></th>
+        <th md-column md-numeric md-order-by="contributions">Contributions (?) <md-tooltip>Contributions to all repos of this organization</md-tooltip></th>
+        <th md-column md-numeric md-order-by="followers">Followers</th>
+        <th md-column md-numeric md-order-by="public_repos">Public repos</th>
+        <th md-column md-numeric md-order-by="public_gists">Public gists</th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="contrib in contributors | filter: { login: filter } | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+        <td md-cell>
+          <md-list-item class="contact-item">
+            <img ng-src="{{ contrib.avatar_url }}" class="md-avatar" alt="{{ contrib.login }}" />
+            <div class="md-list-item-text compact">
+              <p><a ng-href="{{ '/#/User/' + contrib.login }}">{{ contrib.login }}</a></p>
+            </div>
+          </md-list-item>
+        </td>
+        <td md-cell>{{ contrib.contributions }}</td>
+        <td md-cell>{{ contrib.followers }}</td>
+        <td md-cell>{{ contrib.public_repos }}</td>
+        <td md-cell>{{ contrib.public_gists }}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+<md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{ contributors.length }}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks"></md-table-pagination>
 
   </md-card-content>
 </md-card>

@@ -6,9 +6,6 @@
         templateUrl: '/partials/github/org/about.tmpl.html',
         scope: {
           org: '='
-        },
-        link($scope) {
-          console.log($scope);
         }
     };
   }]);

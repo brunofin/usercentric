@@ -32,6 +32,19 @@
       return deferred.promise;
     };
 
+    const reposResolve = ($route, $q, GitHubDAO) => {
+      const deferred = $q.defer();
+
+      GitHubDAO.orgs.getPublicRepositories($route.current.params.org)
+       .then(({ data }) => {
+         deferred.resolve(data);
+       }, ({ status }) => {
+         deferred.reject({ status });
+       });
+
+       return deferred.promise;
+    };
+
     $routeProvider
      .when('/User/:user', {
        templateUrl: '/partials/github/user.tmpl.html',
@@ -43,11 +56,9 @@
      .when('/Organization/:org', {
        templateUrl: '/partials/github/organization.tmpl.html',
        reloadOnSearch: false,
-       controller($scope) {
-         console.log($scope);
-       },
        resolve: {
-         org: orgResolve
+         org: orgResolve,
+         repos: reposResolve
        }
      })
   }]);
