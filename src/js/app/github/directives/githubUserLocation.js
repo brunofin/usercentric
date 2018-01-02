@@ -8,18 +8,24 @@
           user: '='
         },
         controller($scope) {
-          NominatimDAO.geolocate($scope.user.location).then(({ data: [{ lat, lon: lng }] }) => {
-            lat = parseFloat(lat);
-            lng = parseFloat(lng);
+            NominatimDAO.geolocate($scope.user.location).then(({ data }) => {
+              if (data.length > 0) {
+                const result = data[0];
 
-            angular.extend($scope, {
-              userLocation: {
-                lat,
-                lng,
-                zoom: 11
+                const lat = parseFloat(result.lat);
+                const lng = parseFloat(result.lon);
+
+                angular.extend($scope, {
+                  userLocation: {
+                    lat,
+                    lng,
+                    zoom: 11
+                  }
+                });
               }
+            }, e => {
+              $scope.notGeolocated = true;
             });
-          }).catch(e => console.error(e));
         }
     };
   }]);
