@@ -78,6 +78,13 @@
             params
           });
         },
+        getPublicEvents(username) {
+          return $http({
+            method: 'GET',
+            url: `${ apiBase }/users/${ username }/events/public`,
+            params
+          });
+        },
       },
       orgs: {
         getOrganization(org) {

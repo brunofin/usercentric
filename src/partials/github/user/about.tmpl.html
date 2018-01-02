@@ -1,8 +1,12 @@
-<md-card class="user-about-card">
+<md-card class="long-card">
   <md-card-title>
     <md-card-title-text>
       <span class="md-headline">{{ user.name }}</span>
       <span class="md-subhead">{{ user.login }}</span>
+      <span>
+        <a ng-href="{{ 'https://github.com/' + user.login }}"
+          target="_blank">View on GitHub</a>
+      </span>
 
       <a ng-if="user.blog" ng-href="{{ user.blog }}" target="_blank">{{ user.blog }}</a>
       <a ng-if="user.email" ng-href="{{ 'mailto:' + user.email }}" target="_blank">{{ user.email }}</a>

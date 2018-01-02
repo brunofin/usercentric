@@ -2,6 +2,10 @@
   width: 440px;
 }
 
+.long-card {
+  max-width: 897px;
+}
+
 section.contained-list {
   [role="list"] {
     max-height: 200px;

@@ -1,12 +1,14 @@
   <github-user-about user="$resolve.user"></github-user-about>
 
+  <github-user-contributions user="$resolve.user"></github-user-contributions>
+
   <div layout="column" layout-gt-sm="row">
     <div>
       <github-user-location user="$resolve.user"></github-user-location>
       <github-user-people user="$resolve.user"></github-user-people>
+      <github-user-organizations user="$resolve.user"></github-user-organizations>
     </div>
     <div>
-      <github-user-organizations user="$resolve.user"></github-user-organizations>
       <github-user-repos user="$resolve.user"></github-user-repos>
     </div>
   </div>
