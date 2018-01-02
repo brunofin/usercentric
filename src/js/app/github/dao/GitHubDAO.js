@@ -103,6 +103,13 @@
         },
       },
       repos: {
+        getRepository(repository) {
+          return $http({
+            method: 'GET',
+            url: `${ apiBase }/repos/${ repository }`,
+            params
+          });
+        },
         getRepoContributors(repository) {
           return $http({
             method: 'GET',

@@ -45,6 +45,19 @@
        return deferred.promise;
     };
 
+    const repoResolve = ($route, $q, GitHubDAO) => {
+      const deferred = $q.defer();
+
+      GitHubDAO.repos.getRepository($route.current.params.repo)
+       .then(({ data }) => {
+         deferred.resolve(data);
+       }, ({ status }) => {
+         deferred.reject({ status });
+       });
+
+       return deferred.promise;
+    };
+
     $routeProvider
      .when('/User/:user', {
        templateUrl: '/partials/github/user.tmpl.html',
@@ -59,6 +72,13 @@
        resolve: {
          org: orgResolve,
          repos: reposResolve
+       }
+     })
+     .when('/Repository/:repo*\/', {
+       templateUrl: '/partials/github/repository.tmpl.html',
+       reloadOnSearch: false,
+       resolve: {
+         repo: repoResolve
        }
      })
   }]);

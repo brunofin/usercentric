@@ -1,0 +1,55 @@
+<md-card class="long-card">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">{{ repo.full_name }}</span>
+      <span class="md-subhead" ng-show="repo.fork">
+        Repository forked by <a ng-href="{{ '/#/User/' + repo.owner.login }}">{{ repo.owner.login }}</a>
+      </span>
+      <span class="md-subhead" ng-hide="repo.fork">
+        Repository by <a ng-href="{{ '/#/User/' + repo.owner.login }}">{{ repo.owner.login }}</a>
+      </span>
+
+      <span>
+        <a ng-href="{{ repo.html_url }}"
+          target="_blank">View on GitHub</a>
+      </span>
+
+      <span ng-if="repo.homepage">
+        <a ng-href="{{ repo.homepage }}"
+          target="_blank">{{ repo.homepage }}</a>
+      </span>
+
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content layout="column">
+    <p ng-if="repo.description" ng-bind="repo.description"></p>
+
+    <div layout="row" layout-align="space-between center">
+      <div>
+        <md-icon md-svg-src="/assets/icons/created_at.svg">
+          <md-tooltip>Created at</md-tooltip>
+        </md-icon>
+        <span>{{ repo.created_at | moment:"DD/MM/YYYY" }}</span>
+      </div>
+
+      <div>
+        <md-icon md-svg-src="/assets/icons/created_at.svg">
+          <md-tooltip>Forks count</md-tooltip>
+        </md-icon>
+        <span>{{ repo.forks_count }}</span>
+      </div>
+
+      <div>
+        <md-icon md-svg-src="/assets/icons/created_at.svg">
+          <md-tooltip>Open issues</md-tooltip>
+        </md-icon>
+        <span>{{ repo.open_issues }}</span>
+      </div>
+
+      <p ng-if="repo.license"><md-tooltip>License</md-tooltip>{{ repo.license }}</p>
+
+      <p><md-tooltip>Main programming language</md-tooltip>{{ repo.language }}</p>
+    </div>
+
+  </md-card-content>
+</md-card>
