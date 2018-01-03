@@ -6,7 +6,7 @@
       geolocate(query) {
         return $http({
           method: 'GET',
-          url: `http://nominatim.openstreetmap.org/search?q=${ query }&format=json`
+          url: `https://nominatim.openstreetmap.org/search?q=${ query }&format=json`
         });
       }
     }
