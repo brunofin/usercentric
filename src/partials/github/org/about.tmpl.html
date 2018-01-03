@@ -18,28 +18,28 @@
 
     <div>
       <md-icon md-svg-src="/assets/icons/created_at.svg">
-        <md-tooltip>Created at</md-tooltip>
+        <md-tooltip>{{ 'USER.CREATED_AT' | translate }}</md-tooltip>
       </md-icon>
       <span>{{ org.created_at | moment:"DD/MM/YYYY" }}</span>
     </div>
 
     <div>
       <md-icon md-svg-src="/assets/icons/autorenew.svg">
-        <md-tooltip>Last updated at</md-tooltip>
+        <md-tooltip>{{ 'USER.LAST_UPDATED' | translate }}</md-tooltip>
       </md-icon>
       <span>{{ org.updated_at | moment }}</span>
     </div>
 
     <div>
       <md-icon md-svg-src="/assets/icons/autorenew.svg">
-        <md-tooltip>Public repositories</md-tooltip>
+        <md-tooltip>{{ 'USER.PUBLIC_REPOS' | translate }}</md-tooltip>
       </md-icon>
       <span>{{ org.public_repos }}</span>
     </div>
 
     <div ng-if="org.location">
       <md-icon md-svg-src="/assets/icons/autorenew.svg">
-        <md-tooltip>Location</md-tooltip>
+        <md-tooltip>{{ 'USER.LOCATION' | translate }}</md-tooltip>
       </md-icon>
       <span>{{ org.location }}</span>
     </div>

@@ -3,15 +3,15 @@
     <md-card-title-text>
       <span class="md-headline">{{ repo.full_name }}</span>
       <span class="md-subhead" ng-show="repo.fork">
-        Repository forked by <a ng-href="{{ '/#/User/' + repo.owner.login }}">{{ repo.owner.login }}</a>
+        {{ 'REPOS.FORKED_BY' | translate }}<a ng-href="{{ '/#/User/' + repo.owner.login }}">{{ repo.owner.login }}</a>
       </span>
       <span class="md-subhead" ng-hide="repo.fork">
-        Repository by <a ng-href="{{ '/#/User/' + repo.owner.login }}">{{ repo.owner.login }}</a>
+        {{ 'REPOS.REPO_BY' | translate }}<a ng-href="{{ '/#/User/' + repo.owner.login }}">{{ repo.owner.login }}</a>
       </span>
 
       <span>
         <a ng-href="{{ repo.html_url }}"
-          target="_blank">View on GitHub</a>
+          target="_blank">{{ 'VIEW_ON_GITHUB' | translate }}</a>
       </span>
 
       <span ng-if="repo.homepage">
@@ -27,21 +27,21 @@
     <div layout="row" layout-align="space-between center">
       <div>
         <md-icon md-svg-src="/assets/icons/created_at.svg">
-          <md-tooltip>Created at</md-tooltip>
+          <md-tooltip>{{ 'USER.CREATED_AT' | translate }}</md-tooltip>
         </md-icon>
         <span>{{ repo.created_at | moment:"DD/MM/YYYY" }}</span>
       </div>
 
       <div>
         <md-icon md-svg-src="/assets/icons/created_at.svg">
-          <md-tooltip>Forks count</md-tooltip>
+          <md-tooltip>{{ 'REPOS.FORKS_COUNT' | translate }}</md-tooltip>
         </md-icon>
         <span>{{ repo.forks_count }}</span>
       </div>
 
       <div>
         <md-icon md-svg-src="/assets/icons/created_at.svg">
-          <md-tooltip>Open issues</md-tooltip>
+          <md-tooltip>{{ 'REPOS.OPEN_ISSUES' | translate }}</md-tooltip>
         </md-icon>
         <span>{{ repo.open_issues }}</span>
       </div>
@@ -52,7 +52,7 @@
       </p>
 
       <p ng-if="repo.language">
-        <md-tooltip>Main programming language</md-tooltip>
+        <md-tooltip>{{ 'REPOS.PROG_LANG' | translate }}</md-tooltip>
         {{ repo.language }}
       </p>
     </div>

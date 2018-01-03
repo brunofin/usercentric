@@ -1,17 +1,17 @@
 <md-card class="info-card">
   <md-nav-bar md-selected-nav-item="peopleCtrl.currentNav">
      <md-nav-item md-nav-click="peopleCtrl.navTo('following')" name="following">
-       Following
+       {{ 'USER.FOLLOWING' | translate }}
      </md-nav-item>
      <md-nav-item md-nav-click="peopleCtrl.navTo('followers')" name="followers">
-       Followers
+       {{ 'USER.FOLLOWERS' | translate }}
      </md-nav-item>
    </md-nav-bar>
 
   <md-card-content>
 
     <section class="contained-list" ng-show="peopleCtrl.isShowingFollowing()">
-      <md-subheader class="md-no-sticky">{{ following.length }} following</md-subheader>
+      <md-subheader class="md-no-sticky">{{ 'USER.TOTAL_FOLLOWING' | translate:{ total: following.length } }}</md-subheader>
       <md-list>
         <md-list-item class="contact-item" ng-repeat="contact in following | orderBy:'+login'">
           <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
@@ -21,7 +21,7 @@
         </md-list-item>
         <md-list-item class="contact-item" ng-hide="following.length">
           <div class="md-list-item-text compact">
-            <span>This list is empty</span>
+            <span>{{ 'SEARCHBAR.EMPTY_LIST' | translate }}</span>
           </div>
         </md-list-item>
       </md-list>
@@ -29,7 +29,7 @@
     </section>
 
     <section class="contained-list" ng-show="peopleCtrl.isShowingFollowers()">
-      <md-subheader class="md-no-sticky">{{ followers.length }} followers</md-subheader>
+      <md-subheader class="md-no-sticky">{{ 'USER.TOTAL_FOLLOWERS' | translate:{ total: followers.length } }}</md-subheader>
       <md-list>
         <md-list-item class="contact-item" ng-repeat="contact in followers | orderBy:'+login'">
           <img ng-src="{{ contact.avatar_url }}" class="md-avatar" alt="{{ contact.login }}" />
@@ -39,7 +39,7 @@
         </md-list-item>
         <md-list-item class="contact-item" ng-hide="followers.length">
           <div class="md-list-item-text compact">
-            <span>This list is empty</span>
+            <span>{{ 'SEARCHBAR.EMPTY_LIST' | translate }}</span>
           </div>
         </md-list-item>
       </md-list>

@@ -1,10 +1,10 @@
 <md-card class="info-card">
   <md-nav-bar md-selected-nav-item="reposCtrl.currentNav">
      <md-nav-item md-nav-click="reposCtrl.navTo('repos')" name="repos">
-       Repositories
+       {{ 'REPOS.REPOSITORIES' | translate }}
      </md-nav-item>
      <md-nav-item md-nav-click="reposCtrl.navTo('gists')" name="gists">
-       Gists
+       {{ 'REPOS.GISTS' | translate }}
      </md-nav-item>
    </md-nav-bar>
 
@@ -12,15 +12,15 @@
     <div ng-show="reposCtrl.isShowingRepos()">
       <div layout="row" layout-align="start center">
         <md-checkbox ng-model="show.forks">
-          Show forked
+          {{ 'REPOS.SHOW_FORKED' | translate }}
         </md-checkbox>
         <md-checkbox ng-model="show.starred" >
-          Show starred
+          {{ 'REPOS.SHOW_STARRED' | translate }}
         </md-checkbox>
       </div>
 
       <section class="contained-list">
-        <md-subheader class="md-no-sticky">{{ repos.length }} owned</md-subheader>
+        <md-subheader class="md-no-sticky">{{ 'REPOS.TOTAL_OWNED' | translate:{ total: repos.length } }}</md-subheader>
         <md-list>
           <md-list-item class="contact-item" ng-repeat="repo in repos | orderBy:'+name'">
             <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
@@ -31,14 +31,14 @@
           </md-list-item>
           <md-list-item class="contact-item" ng-hide="repos.length">
             <div class="md-list-item-text compact">
-              <span>This list is empty</span>
+              <span>{{ 'SEARCHBAR.EMPTY_LIST' | translate }}</span>
             </div>
           </md-list-item>
         </md-list>
       </section>
 
       <section class="contained-list" ng-show="show.forks">
-        <md-subheader class="md-no-sticky">{{ forked.length }} forked</md-subheader>
+        <md-subheader class="md-no-sticky">{{ 'REPOS.TOTAL_FORKED' | translate:{ total: forked.length } }}</md-subheader>
         <md-list>
           <md-list-item class="contact-item" ng-repeat="repo in forked | orderBy:'+name'">
             <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
@@ -49,14 +49,14 @@
           </md-list-item>
           <md-list-item class="contact-item" ng-hide="forked.length">
             <div class="md-list-item-text compact">
-              <span>This list is empty</span>
+              <span>{{ 'SEARCHBAR.EMPTY_LIST' | translate }}</span>
             </div>
           </md-list-item>
         </md-list>
       </section>
 
       <section class="contained-list" ng-show="show.starred">
-        <md-subheader class="md-no-sticky">{{ starred.length }} starred</md-subheader>
+        <md-subheader class="md-no-sticky">{{ 'REPOS.TOTAL_STARRED' | translate:{ total: starred.length } }}</md-subheader>
         <md-list>
           <md-list-item class="contact-item" ng-repeat="repo in starred | orderBy:'+name'">
             <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
@@ -68,14 +68,14 @@
         </md-list>
         <md-list-item class="contact-item" ng-hide="starred.length">
           <div class="md-list-item-text compact">
-            <span>This list is empty</span>
+            <span>{{ 'SEARCHBAR.EMPTY_LIST' | translate }}</span>
           </div>
         </md-list-item>
       </section>
     </div>
 
     <section class="contained-list" ng-show="reposCtrl.isShowingGists()">
-      <md-subheader class="md-no-sticky">{{ gists.length }} gists</md-subheader>
+      <md-subheader class="md-no-sticky">{{ 'REPOS.TOTAL_GISTS' | translate:{ total: gists.length } }}</md-subheader>
       <md-list>
         <md-list-item class="contact-item" ng-repeat="gist in gists | orderBy:'+name'">
           <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
@@ -91,7 +91,7 @@
         </md-list-item>
         <md-list-item class="contact-item" ng-hide="gists.length">
           <div class="md-list-item-text compact">
-            <span>This list is empty</span>
+            <span>{{ 'SEARCHBAR.EMPTY_LIST' | translate }}</span>
           </div>
         </md-list-item>
       </md-list>

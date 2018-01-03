@@ -5,7 +5,7 @@
       <span class="md-subhead">{{ user.login }}</span>
       <span>
         <a ng-href="{{ 'https://github.com/' + user.login }}"
-          target="_blank">View on GitHub</a>
+          target="_blank">{{ 'VIEW_ON_GITHUB' | translate }}</a>
       </span>
 
       <a ng-if="user.blog" ng-href="{{ user.blog }}" target="_blank">{{ user.blog }}</a>
@@ -15,10 +15,10 @@
       </span>
       <p ng-if="user.bio" ng-bind="user.bio"></p>
       <p ng-if="user.hireable">
-        <strong>For hire</strong>
+        <strong>{{ 'FOR_HIRE' | translate }}</strong>
       </p>
       <p ng-if="user.site_admin">
-        <strong>GitHub admin</strong>
+        <strong>{{ 'GITHUB_ADMIN' | translate }}</strong>
       </p>
     </md-card-title-text>
     <md-card-title-media>
@@ -31,28 +31,28 @@
 
     <div>
       <md-icon md-svg-src="/assets/icons/followers.svg">
-        <md-tooltip>Followers</md-tooltip>
+        <md-tooltip>{{ 'USER.FOLLOWERS' | translate }}</md-tooltip>
       </md-icon>
       <span>{{ user.followers }}</span>
     </div>
 
     <div>
       <md-icon md-svg-src="/assets/icons/following.svg">
-        <md-tooltip>Following</md-tooltip>
+        <md-tooltip>{{ 'USER.FOLLOWing' | translate }}</md-tooltip>
       </md-icon>
       <span>{{ user.following }}</span>
     </div>
 
     <div>
       <md-icon md-svg-src="/assets/icons/created_at.svg">
-        <md-tooltip>Created at</md-tooltip>
+        <md-tooltip>{{ 'USER.CREATED_AT' | translate }}</md-tooltip>
       </md-icon>
       <span>{{ user.created_at | moment:"DD/MM/YYYY" }}</span>
     </div>
 
     <div>
       <md-icon md-svg-src="/assets/icons/autorenew.svg">
-        <md-tooltip>Last updated at</md-tooltip>
+        <md-tooltip>{{ 'USER.LAST_UPDATED' | translate }}</md-tooltip>
       </md-icon>
       <span>{{ user.updated_at | moment }}</span>
     </div>

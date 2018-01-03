@@ -1,14 +1,14 @@
 <md-card class="long-card">
   <md-card-title>
     <md-card-title-text>
-      <span class="md-headline">Contributors</span>
-      <span class="md-subheader">List of contributors to this repository</span>
+      <span class="md-headline">{{ 'MEMBERS.CONTRIBUTORS' | translate }}</span>
+      <span class="md-subheader">{{ 'REPOS.CONTRIB_SUBHEADER' | translate }}</span>
     </md-card-title-text>
   </md-card-title>
   <md-card-content layout="column">
 
   <md-input-container flex>
-    <label>Search</label>
+    <label>{{ 'SEARCHBAR.SEARCH' | translate }}</label>
     <input ng-model="filter" ng-change="filterChanged()" type="text" />
   </md-input-container>
 
@@ -16,11 +16,11 @@
   <table md-table>
     <thead md-head md-order="query.order">
       <tr md-row>
-        <th md-column md-order-by="login"><span>Username</span></th>
-        <th md-column md-numeric md-order-by="contributions">Contributions (?) <md-tooltip>Contributions to all repos of this organization</md-tooltip></th>
-        <th md-column md-numeric md-order-by="followers">Followers</th>
-        <th md-column md-numeric md-order-by="public_repos">Public repos</th>
-        <th md-column md-numeric md-order-by="public_gists">Public gists</th>
+        <th md-column md-order-by="login"><span>{{ 'MEMBERS.USERNAME' | translate }}</span></th>
+        <th md-column md-numeric md-order-by="contributions">{{ 'MEMBERS.CONTRIBS' | translate }}<md-tooltip>{{ 'REPOS.CONTRIBS_DETAIL' | translate }}</md-tooltip></th>
+        <th md-column md-numeric md-order-by="followers">{{ 'USER.FOLLOWERS' | translate }}</th>
+        <th md-column md-numeric md-order-by="public_repos">{{ 'USER.PUBLIC_REPOS' | translate }}</th>
+        <th md-column md-numeric md-order-by="public_gists">{{ 'USER.PUBLIC_GISTS' | translate }}</th>
       </tr>
     </thead>
     <tbody md-body>

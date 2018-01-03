@@ -1,0 +1,120 @@
+<section>
+  <h1>Usercentric GitHub</h1>
+
+  <h3>
+    <span>{{ 'MADE_WITH_LOVE_BY' | translate }}<a href="https://github.com/brunofin" target="_blank">Bruno Finger</a></span>
+  </h3>
+
+  <p>
+    Usercentric GitHub is my solution to a challenged proposed by a company as part of their recruiting process.
+  </p>
+
+  <p>
+    The challenged consisted of creating an application which moves the focal point of GitHub from the repositories and codes, to the user and their interactions.
+  </p>
+
+<p>
+  These are the proposed requirements:
+</p>
+
+<ul>
+  <li>
+    The list of contributors to all Angular repositories. The ranking should be sortable by amount of contributions made by developer to all repositories, by amount of followers, public repos & gists he/she published;
+  </li>
+  <li>
+    The details page of each contributor with all repositories he contributed to and his details;
+  </li>
+  <li>
+    The repository details page where we can find other contributors.
+  </li>
+</ul>
+
+<p>
+  The developed application implements all three above requirements, and:
+</p>
+
+<ul>
+  <li>
+    Not only the Angular organization repositories, but it also supports showing the same level of details for any given organization;
+  </li>
+  <li>
+    When the User has their location set, the application will try to geolocate the data using the OpenStreetMaps Nominatim API and display it using a Leaflet component with OSM layer;
+  </li>
+  <li>
+    The application implements I18N, that means it is translatable. The following languages are implemented and usable within the app: English (US) and Portuguese (BR). Other languages can easily be implemented by extending one of the strings.json files.
+  </li>
+  <li>
+    There is an asynchronous search bar which will simultaneously display users and organizations based on the input, and once clicking on a result, will redirect to the correct view within the application for that specific kind of data. The search bar implements a debounce rate to avoid overflowing the search API and exceed the maximum amount of API requests limit.
+  </li>
+  <li>
+    The application internally cache some of the API calls to avoid making too many requests;
+  </li>
+  <li>
+    The application also has a somewhat responsive layout, though it wasn't the primary focus of this implementation.
+  </li>
+</ul>
+
+<p>
+  The technological stack in use is:
+</p>
+
+<ul>
+  <li>
+    AngularJS 1.5;
+  </li>
+  <li>
+    Angular Material;
+  </li>
+  <li>
+    OSM and Leaflet;
+  </li>
+  <li>
+    Babel (for transpiling ES6 into ES5);
+  </li>
+  <li>
+    Gulp;
+  </li>
+  <li>
+    SASS/SCSS;
+  </li>
+  <li>
+    More details can be found in the package.json file.
+  </li>
+</ul>
+
+<p>
+  To locally visualize the solution, follow the instructions below:
+</p>
+
+<p>
+  First, make sure you have all the dependencies installed locally, those would be:
+</p>
+
+<ul>
+  <li>
+    Python 3
+  </li>
+  <li>
+    Git
+  </li>
+  <li>
+    NodeJS 9
+  </li>
+  <li>
+    Yarn
+  </li>
+</ul>
+
+<p>
+  If on Ubuntu/Debian-based distros or Ubuntu for Windows 10, simply run the <code>setupEnv.sh</code> script in a bash shell, and it should take care of it for you.
+</p>
+
+<p>
+  Then, simply run <code>yarn start</code>. It should make the source code ready and start a local web server running on port 8080.
+</p>
+
+<p>
+  There's a live demo at <a href="https://usercentric.brunofinger.xyz" target="_blank">https://usercentric.brunofinger.xyz</a> as well.
+</p>
+
+</section>

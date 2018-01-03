@@ -1,0 +1,60 @@
+{
+  "MADE_WITH_LOVE_BY": "Made with ❤ by ",
+  "VIEW_ON_GITHUB": "View on GitHub",
+  "FOR_HIRE": "For hire",
+  "GITHUB_ADMIN": "GitHub admin",
+  "SEARCHBAR": {
+    "PLACEHOLDER": "Search for user or organization",
+    "NO_RESULTS": "No results were found",
+    "SEARCH": "Search",
+    "EMPTY_LIST": "This list is empty"
+  },
+  "USER": {
+    "TYPE": {
+      "User": "User",
+      "Organization": "Organization"
+    },
+    "CREATED_AT": "Created at",
+    "LAST_UPDATED": "Last updated at",
+    "PUBLIC_REPOS": "Public repositories",
+    "LOCATION": "Location",
+    "FOLLOWERS": "Followers",
+    "TOTAL_FOLLOWERS": "{{ total }} followers",
+    "FOLLOWING": "Following",
+    "TOTAL_FOLLOWING": "{{ total }} following",
+    "PUBLIC_REPOS": "Public repos",
+    "PUBLIC_GISTS": "Public gists",
+    "TOTAL_REPOS": "{{ repos }} repositories",
+    "CONTRIBUTIONS": "Contributions",
+    "NO_CONTRIBUTIONS": "No recent public contributions",
+    "CONTRIBUTIONS_SUBHEADER": "{{ user }} has recently contributed to the following repositories:"
+  },
+  "MEMBERS": {
+    "CONTRIBUTORS": "Contributors",
+    "USERNAME": "Username",
+    "CONTRIBS": "Contributions (?)",
+    "CONTRIBS_DETAIL": "Individual contributions by this user to all repos of this organization"
+  },
+  "ORGS": {
+    "CONTRIB_SUBHEADER": "List of contributors to all public repositories owned by this organization",
+    "ORGANIZATIONS": "Organizations",
+    "TOTAL_ORGANIZATIONS": "{{ orgs }} organizations"
+  },
+  "REPOS": {
+    "REPOSITORIES": "Repositories",
+    "GISTS": "Gists",
+    "SHOW_FORKED": "Show forked",
+    "SHOW_STARRED": "Show starred",
+    "TOTAL_OWNED": "{{ total }} owned",
+    "TOTAL_FORKED": "{{ total }} forked",
+    "TOTAL_STARRED": "{{ total }} starred",
+    "TOTAL_GISTS": "{{ total }} gists",
+    "FORKED_BY": "Repository forked by ",
+    "REPO_BY": "Repository by ",
+    "FORKS_COUNT": "Forks count",
+    "OPEN_ISSUES": "Open issues",
+    "PROG_LANG": "Main programming language",
+    "CONTRIB_SUBHEADER": "List of contributors to this repository",
+    "CONTRIBS_DETAIL": "Individual contributions by this user to this repository"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "MADE_WITH_LOVE_BY": "Feito com ❤ por ",
+  "VIEW_ON_GITHUB": "Ver no GitHub",
+  "FOR_HIRE": "Contratável",
+  "GITHUB_ADMIN": "Admin do GitHub",
+  "SEARCHBAR": {
+    "PLACEHOLDER": "Buscar por usuários e organizações",
+    "NO_RESULTS": "Nenhum resultado foi encontrado",
+    "SEARCH": "Buscar",
+    "EMPTY_LIST": "Esta lista está vazia"
+  },
+  "USER": {
+    "TYPE": {
+      "User": "Usuário",
+      "Organization": "Organização"
+    },
+    "CREATED_AT": "Criado em",
+    "LAST_UPDATED": "Último atualizado em",
+    "PUBLIC_REPOS": "Repositórios públicos",
+    "LOCATION": "Localização",
+    "FOLLOWERS": "Seguidores",
+    "TOTAL_FOLLOWERS": "{{ total }} seguidores",
+    "FOLLOWING": "Seguindo",
+    "TOTAL_FOLLOWING": "{{ total }} seguindo",
+    "PUBLIC_REPOS": "Repos públicos",
+    "PUBLIC_GISTS": "Gists públicos",
+    "TOTAL_REPOS": "{{ repos }} repositórios",
+    "CONTRIBUTIONS": "Contribuições",
+    "NO_CONTRIBUTIONS": "Nenhuma contribuição pública recente",
+    "CONTRIBUTIONS_SUBHEADER": "{{ user }} recentemente contribuiu com os seguintes repositórios:"
+  },
+  "MEMBERS": {
+    "CONTRIBUTORS": "Contribuidores",
+    "USERNAME": "Usuário",
+    "CONTRIBS": "Contributições (?)",
+    "CONTRIBS_DETAIL": "Contribuições individuais feitas por este usuário em todos os repositórios desta organização"
+  },
+  "ORGS": {
+    "CONTRIB_SUBHEADER": "Lista de contribuidores para todos os repositórios públicos desta organização",
+    "ORGANIZATIONS": "Organizações",
+    "TOTAL_ORGANIZATIONS": "{{ orgs }} organizações"
+  },
+  "REPOS": {
+    "REPOSITORIES": "Repositórios",
+    "GISTS": "Gists",
+    "SHOW_FORKED": "Mostrar forks",
+    "SHOW_STARRED": "Mostrar marcados",
+    "TOTAL_OWNED": "{{ total }} próprios",
+    "TOTAL_FORKED": "{{ total }} forks",
+    "TOTAL_STARRED": "{{ total }} marcados",
+    "TOTAL_GISTS": "{{ total }} gists",
+    "FORKED_BY": "Repositório forked por ",
+    "REPO_BY": "Repositório por ",
+    "FORKS_COUNT": "Total forks",
+    "OPEN_ISSUES": "Issues abertas",
+    "PROG_LANG": "Linguagem de programação principal",
+    "CONTRIB_SUBHEADER": "Lista de contribuidores deste repositório",
+    "CONTRIBS_DETAIL": "Contribuições individuais deste usuário neste repositório"
+  }
+}

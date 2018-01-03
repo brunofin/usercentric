@@ -1,12 +1,12 @@
 <md-card class="long-card">
   <md-card-title>
     <md-card-title-text>
-      <span class="md-headline">Contributions</span>
+      <span class="md-headline">{{ 'USER.CONTRIBUTIONS' | translate }}</span>
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
     <section class="contained-list">
-      <md-subheader class="md-no-sticky">{{ user.login }} has recently contributed to the following repositories</md-subheader>
+      <md-subheader class="md-no-sticky">{{ 'USER.CONTRIBUTIONS_SUBHEADER' | translate:{ user: user.login } }}</md-subheader>
       <md-list>
         <md-list-item class="contact-item" ng-repeat="contrib in contribs | unique:'repo.name' | orderBy: '-created_at'">
           <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
@@ -16,7 +16,7 @@
         </md-list-item>
         <md-list-item class="contact-item" ng-hide="contribs.length">
           <div class="md-list-item-text compact">
-            <span>No recent public contributions</span>
+            <span>{{ 'USER.NO_CONTRIBUTIONS' | translate }}</span>
           </div>
         </md-list-item>
       </md-list>

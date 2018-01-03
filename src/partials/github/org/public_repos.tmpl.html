@@ -1,12 +1,12 @@
 <md-card class="long-card">
   <md-card-title>
     <md-card-title-text>
-      <span class="md-headline">Public repositories</span>
+      <span class="md-headline">{{ 'USER.PUBLIC_REPOS' | translate}}</span>
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
     <section class="contained-list">
-      <md-subheader class="md-no-sticky">{{ repos.length }} repositories</md-subheader>
+      <md-subheader class="md-no-sticky">{{ 'USER.TOTAL_REPOS' | translate:{ repos: repos.length } }}</md-subheader>
       <md-list>
         <md-list-item class="contact-item" ng-repeat="repo in repos | orderBy:'+name'">
           <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
@@ -17,7 +17,7 @@
         </md-list-item>
         <md-list-item class="contact-item" ng-hide="repos.length">
           <div class="md-list-item-text compact">
-            <span>This list is empty</span>
+            <span>{{ 'SEARCH.EMPTY_LIST' | translate }}</span>
           </div>
         </md-list-item>
       </md-list>

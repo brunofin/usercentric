@@ -23,6 +23,7 @@
         <h3>
           <span>Usercentric GitHub</span>
         </h3>
+
         <div layout-margin flex ng-controller="GitHubSearchController as ctrl">
           <md-autocomplete
               class="user-repo-search"
@@ -35,7 +36,7 @@
               md-item-text="item.login"
               md-min-length="2"
               md-menu-class="user-repo-search-results"
-              placeholder="Search for user or organization">
+              placeholder="{{ 'SEARCHBAR.PLACEHOLDER' | translate }}">
             <md-item-template layout="column">
                 <md-list-item class="md-2-line contact-item">
                   <img ng-src="{{ item.avatar_url}}" class="md-avatar"/>
@@ -44,19 +45,27 @@
                     <h3 md-highlight-text="ctrl.search" md-highlight-flags="^i">
                       {{ item.login }}
                     </h3>
-                    <p>{{ item.type }}</p>
+                    <p>{{ 'USER.TYPE.' + item.type | translate }}</p>
                   </div>
                 </md-list-item>
             </md-item-template>
 
             <md-not-found>
-              No results were found
+              {{ 'SEARCHBAR.NO_RESULTS' | translate }}
             </md-not-found>
           </md-autocomplete>
         </div>
-        <h3>
-          <span>Made with ❤ by <a href="https://github.com/brunofin" target="_blank">Bruno Finger</a></span>
-        </h3>
+
+        <md-input-container ng-controller="LanguageCtrl as langCtrl">
+          <md-select ng-model="langCtrl.lang" ng-model-options="{ getterSetter: true }">
+            <md-option value="pt_BR">
+              Português (Brasil)
+            </md-option>
+            <md-option value="en_US">
+              English (US)
+            </md-option>
+          </md-select>
+        </md-input-container>
       </div>
     </md-toolbar>
 
