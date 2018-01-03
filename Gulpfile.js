@@ -39,8 +39,25 @@ gulp.task('compileSCSS', () =>
     .pipe(gulp.dest('src'))
 );
 
-gulp.task('inject', ['bundleJS', 'compileSCSS'], () => {
-
-});
-
 gulp.task('default', ['bundleJS', 'compileSCSS']);
+
+gulp.task('deploy-copy', ['default'], () =>
+  gulp.src('src/**/*.*')
+    .pipe(gulp.dest('dist'))
+);
+
+gulp.task('deploy-clean:after', ['deploy-copy'], () =>
+  del([
+    'dist/js',
+    'dist/scss',
+    'dist/bundle.*.map',
+  ])
+);
+
+gulp.task('deploy-clean:before', () =>
+  del([
+    'dist',
+  ])
+);
+
+gulp.task('deploy', ['deploy-clean:before', 'deploy-clean:after']);

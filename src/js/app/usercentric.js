@@ -31,7 +31,7 @@
        reloadOnSearch: false,
      })
      .otherwise({
-       redirect: '/About'
+       redirectTo: '/About'
      })
   }]);
 

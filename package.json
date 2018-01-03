@@ -38,7 +38,10 @@
     "prestart": "yarn install",
     "start": "concurrently \"yarn run server:static\" \"gulp\"",
 
-    "server:static": "http-server ./src -a 0.0.0.0 -p 8080"
+    "server:static": "http-server ./src -a 0.0.0.0 -p 8080",
+
+    "predeploy": "yarn install",
+    "deploy": "gulp deploy"
   },
 
   "assets": {
