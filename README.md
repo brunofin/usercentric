@@ -2,9 +2,9 @@
 
 ### Made with ❤ by [Bruno Finger](https://github.com/brunofin)
 
-Usercentric GitHub is my solution to a challenged proposed by a company as part of their recruiting process.
+Usercentric GitHub is my solution to a challenge proposed by a company as part of their recruiting process.
 
-The challenged consisted of creating an application which moves the focal point of GitHub from the repositories and codes, to the user and their interactions.
+The challenge consisted of creating an application which moves the focal point of GitHub from the repositories and codes, to the user and their interactions.
 
 These are the proposed requirements:
 
