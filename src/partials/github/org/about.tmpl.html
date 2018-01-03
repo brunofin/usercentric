@@ -5,7 +5,7 @@
       <span class="md-subhead">{{ org.login }}</span>
 
       <a ng-if="org.blog" ng-href="{{ org.blog }}" target="_blank">{{ org.blog }}</a>
-      <a ng-if="org.email" ng-href="{{ 'mailto:' + org.blog }}" target="_blank">{{ org.email }}</a>
+      <a ng-if="org.email" ng-href="{{ 'mailto:' + org.email }}" target="_blank">{{ org.email }}</a>
       <p ng-if="org.description" ng-bind="org.description"></p>
     </md-card-title-text>
     <md-card-title-media>

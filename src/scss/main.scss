@@ -6,6 +6,10 @@
   max-width: 897px;
 }
 
+.top-toolbar md-input-container .md-errors-spacer{
+  min-height: 0px !important;
+}
+
 section.contained-list {
   [role="list"] {
     max-height: 200px;
@@ -14,7 +18,7 @@ section.contained-list {
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {

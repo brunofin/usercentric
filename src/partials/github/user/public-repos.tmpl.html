@@ -26,7 +26,7 @@
             <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
 
             <div class="md-list-item-text compact">
-              <p><a ng-href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></p>
+              <p><a ng-href="{{ '/#/Repository/' + repo.full_name }}">{{ repo.name }}</a></p>
             </div>
           </md-list-item>
           <md-list-item class="contact-item" ng-hide="repos.length">
@@ -44,7 +44,7 @@
             <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
 
             <div class="md-list-item-text compact">
-              <p><a ng-href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></p>
+              <p><a ng-href="{{ '/#/Repository/' + repo.full_name }}">{{ repo.name }}</a></p>
             </div>
           </md-list-item>
           <md-list-item class="contact-item" ng-hide="forked.length">
@@ -62,7 +62,7 @@
             <img ng-src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" class="md-avatar"/>
 
             <div class="md-list-item-text compact">
-              <p><a ng-href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></p>
+              <p><a ng-href="{{ '/#/Repository/' + repo.full_name }}">{{ repo.name }}</a></p>
             </div>
           </md-list-item>
         </md-list>

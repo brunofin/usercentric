@@ -17,15 +17,45 @@
 
   </head>
 
-  <body layout="column">
-    <md-toolbar layout="row" class="md-whiteframe-z1">
-      <div class="md-toolbar-tools">
-        <h3 layout="row" layout-align="start center">
+  <body ng-cloack layout="column">
+    <md-toolbar layout="row" class="top-toolbar md-whiteframe-z1">
+      <div class="md-toolbar-tools" layout="row" layout-align="start center">
+        <h3>
           <span>Usercentric GitHub</span>
-          <md-input-container>
-            <label>Search for user or organization</label>
-            <input type="text" />
-          </md-input-container>
+        </h3>
+        <div layout-margin flex ng-controller="GitHubSearchController as ctrl">
+          <md-autocomplete
+              class="user-repo-search"
+              md-no-cache="false"
+              md-selected-item="ctrl.selectedItem"
+              md-search-text="ctrl.query"
+              md-delay="1000"
+              md-selected-item-change="ctrl.selectedItemChange(item)"
+              md-items="item in ctrl.search(ctrl.query)"
+              md-item-text="item.login"
+              md-min-length="2"
+              md-menu-class="user-repo-search-results"
+              placeholder="Search for user or organization">
+            <md-item-template layout="column">
+                <md-list-item class="md-2-line contact-item">
+                  <img ng-src="{{ item.avatar_url}}" class="md-avatar"/>
+
+                  <div class="md-list-item-text compact">
+                    <h3 md-highlight-text="ctrl.search" md-highlight-flags="^i">
+                      {{ item.login }}
+                    </h3>
+                    <p>{{ item.type }}</p>
+                  </div>
+                </md-list-item>
+            </md-item-template>
+
+            <md-not-found>
+              No results were found
+            </md-not-found>
+          </md-autocomplete>
+        </div>
+        <h3>
+          <span>Made with ❤ by <a href="https://github.com/brunofin" target="_blank">Bruno Finger</a></span>
         </h3>
       </div>
     </md-toolbar>
@@ -35,7 +65,7 @@
       layout="column"
       layout-align="start stretch"
       layout-padding
-      md-colors="{ 'background': 'accent-hue-3-0.1'}"></md-content>
+      md-colors="{ 'background': 'accent-hue-1-0'}"></md-content>
 
   </body>
 </html>

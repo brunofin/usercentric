@@ -117,6 +117,15 @@
             params
           });
         },
+      },
+      search: {
+        usersAndOrganizations(q) {
+          return $http({
+            method: 'GET',
+            url: `${ apiBase }/search/users`,
+            params: angular.extend({}, { q }, params)
+          });
+        }
       }
     };
   }]);

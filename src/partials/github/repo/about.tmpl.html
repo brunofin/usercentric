@@ -46,9 +46,15 @@
         <span>{{ repo.open_issues }}</span>
       </div>
 
-      <p ng-if="repo.license"><md-tooltip>License</md-tooltip>{{ repo.license }}</p>
+      <p ng-if="repo.license">
+        <md-tooltip>{{ repo.license.name }}</md-tooltip>
+        {{ repo.license.spdx_id }}
+      </p>
 
-      <p><md-tooltip>Main programming language</md-tooltip>{{ repo.language }}</p>
+      <p ng-if="repo.language">
+        <md-tooltip>Main programming language</md-tooltip>
+        {{ repo.language }}
+      </p>
     </div>
 
   </md-card-content>

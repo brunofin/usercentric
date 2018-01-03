@@ -14,6 +14,11 @@
             <p><a ng-href="{{ '/#/Repository/' + contrib.repo.name }}">{{ contrib.repo.name }}</a></p>
           </div>
         </md-list-item>
+        <md-list-item class="contact-item" ng-hide="contribs.length">
+          <div class="md-list-item-text compact">
+            <span>No recent public contributions</span>
+          </div>
+        </md-list-item>
       </md-list>
     </section>
   </md-card-content>
